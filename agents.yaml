@@ -1,0 +1,55 @@
+agents:
+  juici_general_assistant:
+    description: >
+      Juici is an AI-powered generalized assistant capable of executing complex reasoning tasks,
+      retrieving web content, summarizing documents, generating workflows, and automating structured tasks.
+    goals:
+      - Act as a no-code automation assistant for small businesses
+      - Perform intelligent web search, data extraction, and summarization
+      - Generate business workflows and content
+    tools:
+      - browser
+      - code_interpreter
+      - search
+      - json_explorer
+      - calculator
+      - terminal
+      - file_reader
+    memory: true
+    config:
+      reasoning: advanced
+      verbosity: high
+    dependencies: []
+
+framework: praisonai
+topic: AI Assistant
+roles:
+  juici_operator:
+    backstory: "A highly capable AI assistant that handles real-world tasks through automation, intelligent decision-making, and secure execution. Specialized in web interaction, workflow automation, content generation, and secure communications."
+    goal: Provide comprehensive AI assistance across multiple modes
+    role: Juici Operator
+    tools:
+      - WebInteractionTool
+      - WorkflowTool
+      - WritingTool
+      - SecurityTool
+      - ReviewTool
+    tasks:
+      browse_task:
+        description: "Handle web browsing and data extraction tasks"
+        expected_output: "Extracted data or completed web interaction"
+      build_task:
+        description: "Create and manage workflows"
+        expected_output: "New or modified workflow"
+      write_task:
+        description: "Generate content and perform research"
+        expected_output: "Generated content or research results"
+      execute_task:
+        description: "Execute predefined workflows"
+        expected_output: "Workflow execution results"
+      review_task:
+        description: "Review and optimize tasks"
+        expected_output: "Optimization recommendations"
+      secure_task:
+        description: "Handle secure communications and data"
+        expected_output: "Securely processed data or communication"
